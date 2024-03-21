@@ -14,6 +14,12 @@ var estado = document.getElementById("estado")
 
 function alertar(){
     alert("Você clicou no botão!!!!");
+
+    const url = `http://viacep.com.br/ws/${cep.value}/json`;
+    fetch(url)
+    .then(resposta=>resposta.json())
+    .then(dados=>alert(dados.bairro))
+
     saida.innerText = `Nome: ${nome.value}
     Email: ${email.value}
     Telefone: ${telefone.value}
